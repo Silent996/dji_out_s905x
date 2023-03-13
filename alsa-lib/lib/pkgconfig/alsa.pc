@@ -1,0 +1,12 @@
+prefix=/home/xc/桌面/alsa-lib-1.2.8/install
+exec_prefix=/home/xc/桌面/alsa-lib-1.2.8/install
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: alsa
+Description: Advanced Linux Sound Architecture (ALSA) - Library
+Version: 1.2.8
+Requires: 
+Libs: -L${libdir} -lasound
+Libs.private: -lm -ldl -lpthread -lrt
+Cflags: -I${includedir}

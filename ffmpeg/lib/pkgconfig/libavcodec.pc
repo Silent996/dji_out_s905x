@@ -1,0 +1,14 @@
+prefix=/home/xc/桌面/FFmpeg/install
+exec_prefix=${prefix}
+libdir=/home/xc/桌面/FFmpeg/install/lib
+includedir=/home/xc/桌面/FFmpeg/install/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 60.5.100
+Requires: 
+Requires.private: libswresample >= 4.11.100, libavutil >= 58.3.100
+Conflicts:
+Libs: -L${libdir}  -lavcodec 
+Libs.private: -pthread -lm -latomic
+Cflags: -I${includedir}

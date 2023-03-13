@@ -1,0 +1,14 @@
+prefix=/home/xc/桌面/FFmpeg/install
+exec_prefix=${prefix}
+libdir=/home/xc/桌面/FFmpeg/install/lib
+includedir=/home/xc/桌面/FFmpeg/install/include
+
+Name: libpostproc
+Description: FFmpeg postprocessing library
+Version: 57.2.100
+Requires: 
+Requires.private: libavutil >= 58.3.100
+Conflicts:
+Libs: -L${libdir}  -lpostproc 
+Libs.private: -lm -latomic
+Cflags: -I${includedir}

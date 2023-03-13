@@ -1,0 +1,55 @@
+
+# h264编译
+CC=armv8l-linux-gnueabihf-gcc ./configure --enable-static --enable-shared --host=armv8l-linux-gnueabihf --disable-asm --extra-cflags="-fPIC" --prefix=$PWD/install
+
+# zlib
+./configure --prefix=$PWD/install --shared --static
+https://www.cnblogs.com/from-zero/p/12582033.html
+
+# ffmpeg
+./configure --prefix="$PWD/install" \
+	--disable-stripping \
+    --disable-ffmpeg \
+    --disable-doc \
+    --disable-appkit \
+    --disable-avfoundation \
+    --disable-coreimage \
+    --disable-amf \
+    --disable-audiotoolbox \
+    --disable-cuda-llvm \
+    --disable-cuvid \
+    --disable-d3d11va \
+    --disable-dxva2 \
+    --disable-ffnvcodec \
+    --disable-nvdec \
+    --disable-nvenc \
+    --disable-vdpau \
+	--disable-vaapi \
+    --disable-videotoolbox \
+	--disable-lzma \
+	--disable-xlib \
+	--disable-zlib \
+	--disable-asm \
+	--disable-alsa \
+	--enable-static \
+	--enable-shared \
+	--extra-cflags="-I/home/xc/桌面/x264/install/include" \
+	--extra-ldflags="-L/home/xc/桌面/x264/install/lib -lx264" \
+	--enable-encoder=libx264 \
+	--enable-libx264 \
+	--cpu=cortex-a53 \
+	--enable-nonfree \
+	--extra-cflags="-march=armv8-a+crc -mtune=cortex-a53 -mcpu=cortex-a53 -fomit-frame-pointer -Wall -pipe -Os" \
+	--extra-ldflags="-march=armv8-a+crc -mtune=cortex-a53 -Wl,--as-needed" \
+	--enable-cross-compile \
+	--target-os=linux \
+	--arch=arm \
+	--sysinclude="/opt/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/include" \
+	--cc="/opt/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-gcc" \
+	--cxx="/opt/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-g++" \
+	--strip="/opt/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-strip" \
+	--enable-gpl --extra-libs=-ldl --extra-cflags="-fPIC"
+
+
+
+
